@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+# Use Selenium Webdriver to select for bulk deletion all the geocaches in the
+# ignore list that have already been archived.
+# The script uses Safari and you have to already be logged in to the
+# geocaching website.
+
 require 'selenium-webdriver'
 
 def save_to fname, web
