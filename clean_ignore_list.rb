@@ -31,7 +31,7 @@ begin
       break
     end
   }
-  sleep 2  # Wait for the pulldown Javascript to finish.
+  sleep 2 # Wait for the pulldown Javascript to finish.
 
   rows = web.find_elements :css, 'tbody tr'
 
@@ -41,7 +41,7 @@ begin
     next if oldwarning.empty?
 
     puts "Archived cache: #{oldwarning.first.text}"
-    
+
     row.find_element(:tag_name, 'input').click
   }
 
