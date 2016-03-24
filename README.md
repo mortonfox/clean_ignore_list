@@ -2,6 +2,14 @@
 
 ## Introduction
 
+I use the ignore list on the geocaching website to remove geocaching events
+that have already passed from the map. This is easy to do using GSAK filters
+and the "add to bookmark list" feature. Eventually, those events get archived
+and then I have to remove archived events from my ignore list to keep it short
+and manageable. Unfortunately, there doesn't seem to be a way to remove those
+other than selecting each event in the list by hand for removal. So I wrote
+this script to assist me in this task.
+
 This script uses [Selenium WebDriver](http://www.seleniumhq.org/) to select
 archived geocaches in your [Geocaching](https://www.geocaching.com/) ignore
 list for bulk deletion. The script does not actually perform the bulk deletion
