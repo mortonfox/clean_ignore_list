@@ -35,15 +35,25 @@ begin
 
   rows = web.find_elements :css, 'tbody tr'
 
+  archived_count = 0
+
   # Find all rows with archived caches and click the checkbox.
   rows.each { |row|
     oldwarning = row.find_elements :css, '.OldWarning'
     next if oldwarning.empty?
 
+    archived_count += 1
     puts "Archived cache: #{oldwarning.first.text}"
 
     row.find_element(:tag_name, 'input').click
   }
+
+  if archived_count == 0
+    puts 'No archived caches in list.'
+    exit
+  end
+
+  puts "#{archived_count} archived cache(s) found in list."
 
   # Click the Bulk Delete button.
   web.find_element(:id, 'ctl00_ContentBody_ListInfo_btnDelete').click
